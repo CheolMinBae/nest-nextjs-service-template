@@ -7,7 +7,7 @@ import { AppService } from './app.service';
 @Module({
   imports: [
     RenderModule.forRootAsync(
-      Next({ dev: true }),
+      Next({ dev: process.env.NODE_ENV === 'development' }),
       /* null means that nest-next 
             should look for pages in root dir */
       { viewsDir: null },
